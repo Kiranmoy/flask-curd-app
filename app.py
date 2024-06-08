@@ -61,6 +61,7 @@ def edit_transaction(transaction_id):
         if transaction['id'] == transaction_id:
             return render_template("edit.html", transaction=transaction)
 
+
 # Delete operation: Delete a transaction
 @app.route("/delete/<int:transaction_id>")
 def delete_transaction(transaction_id):
@@ -73,4 +74,8 @@ def delete_transaction(transaction_id):
     # Redirect to the transactions list page
     return redirect(url_for("get_transactions"))
 
+
 # Run the Flask app
+# Run the Flask app
+if __name__ == "__main__":
+    app.run(debug=True)
