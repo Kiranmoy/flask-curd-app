@@ -37,7 +37,29 @@ def add_transaction():
     # Render the form template to display the add transaction form
     return render_template("form.html")
 
-# Update operation
+
+# Update operation: Display edit transaction form
+@app.route("/edit/<int:transaction_id>", methods=["GET", "POST"])
+def edit_transaction(transaction_id):
+    if request.method == 'POST':
+        # Extract the updated values from the form fields
+        date = request.form['date']
+        amount = float(request.form['amount'])
+
+        # Find the transaction with the matching ID and update its values
+        for transaction in transactions:
+            if transaction['id'] == transaction_id:
+                transaction['date'] = date
+                transaction['amount'] = amount
+                break
+
+        # Redirect to the transactions list page
+        return redirect(url_for("get_transactions"))
+
+    # Find the transaction with the matching ID and render the edit form
+    for transaction in transactions:
+        if transaction['id'] == transaction_id:
+            return render_template("edit.html", transaction=transaction)
 
 # Delete operation
 
