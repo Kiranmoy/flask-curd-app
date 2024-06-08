@@ -1,6 +1,7 @@
 # flask-curd-app
 
-# Overview
+## Overview
+
 CRUD, which stands for Create, Read, Update, Delete, are basic functionalities that any application based on a database must possess. The development of these features requires additional knowledge of handling routes and requests. You also require multiple endpoint HTML interfaces to accommodate different requests. The purpose of this lab, therefore, is to give you some additional practice on the usage of Flask and develop a fully functional, CRUD operation-capable web application.
 
 For this lab, you will develop a financial transaction recording system. 
@@ -10,7 +11,8 @@ The system must be capable of
 * Updating existing entries, and 
 * Deleting existing entries.
 
-Objectives
+## Objectives
+
 After completing this lab, you will be able to:
 
 * Implement "Create" operation to add transaction entry
@@ -26,8 +28,26 @@ The application has three different web pages. The first one displays all the re
 
 Note: This platform is not persistent. It is recommended that you keep a copy of your code on your local machines and save changes from time to time. In case you revisit the lab, you will need to recreate the files in this lab environment using the saved copies from your machines.
 
-Let's get started!
+# Let's get started!
 
+### Launching App
 
-# API's & Endpoints
-*List all transactions:* GET /
+```python app.py```
+
+### Read operation: List all transactions
+
+* ```GET /``` : To list all transaction
+
+### Create operation: Display add transaction form
+
+* ```GET /add``` : Display add transaction form
+* ```POST /add ``` : Add transaction
+
+### Update operation: Display edit transaction form
+
+* ```GET /edit/<transactionid>``` : Display edit transaction form
+* ```POST /edit/<transactionid>``` : Update transaction
+
+### Delete operation: Delete a transaction
+
+* ```GET /delete/<transaction_id>``` : Delete a transaction
