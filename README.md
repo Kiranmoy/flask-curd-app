@@ -27,3 +27,7 @@ The application has three different web pages. The first one displays all the re
 Note: This platform is not persistent. It is recommended that you keep a copy of your code on your local machines and save changes from time to time. In case you revisit the lab, you will need to recreate the files in this lab environment using the saved copies from your machines.
 
 Let's get started!
+
+
+# API's & Endpoints
+*List all transactions:* GET /
